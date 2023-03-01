@@ -5,44 +5,51 @@ slug: /
 
 # Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+MediBoard is a comprehensive database that provides developers with access to the latest and greatest clinical data for thousands of treatments and procedures.
+
+With MediBoard, you can access **totally structured data** that can be used for training machine learning models, on-the-fly meta-analysis, or displaying up-to-date clinical information. All data is updated in real time on our end.
+
+MediBoard can be accessed via an HTTP REST API.
+
+In this documentation, you'll find all the information you need to get started with MediBoard API, including API endpoints, request and response formats, authentication and authorization methods, and more. We encourage you to explore the documentation thoroughly and reach out to us if you have any questions or feedback.
 
 ## Getting Started
 
-Get started by **creating a new site**.
+Get started by **creating a new account** on our main site: **[mediboard.fyi](https://app.mediboard.fyi)**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Navigate to the **settings page** and **register for API access**. After purchase you should be able to see a key in your account settings page.
 
-### What you'll need
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Making a Request 
 
-## Generate a new site
+Lets's look at all the **effects** for a **treatment**.
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+First let's **find the name** of the treatment we want:
 
 ```bash
-npm init docusaurus@latest my-website classic
+curl -X GET "https://api.mediboard.fyi/api/treatments/search?q=gabapentin" \
+-H "Authorization: Bearer <your_access_token>"
+
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+```json
+{
+    "results": [
+        {
+            "description": null,
+            "from_study": null,
+            "id": 12,
+            "name": "gabapentin",
+            "no_studies": null,
+            "treatment_group": null
+        }
+    ]
+}
+```
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
+Now that we know the name, we can query for the side effects:
 ```bash
-cd my-website
-npm run start
+curl -X GET "https://api.mediboard.fyi/api/treatments/gabapentin/effects" \
+-H "Authorization: Bearer <your_access_token>"
+
 ```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.

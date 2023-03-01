@@ -8,7 +8,7 @@ List adverse effects a treatment split by studies
 
 ## Endpoint
 
-**URL** : `/treatments/<treatment_ids>/effects?<query_params>`
+**URL** : `/api/treatments/<treatment_ids>/effects?<query_params>`
 
 **Method** : `GET`
 

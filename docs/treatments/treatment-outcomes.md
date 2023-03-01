@@ -8,7 +8,7 @@ Get the data points associated with a treatment.
 
 ## Endpoint
 
-**URL** : `/treatments/<treatment_ids>/outcomes?<query_params>`
+**URL** : `/api/treatments/<treatment_ids>/outcomes?<query_params>`
 
 **Method** : `GET`
 

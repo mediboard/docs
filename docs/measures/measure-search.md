@@ -8,7 +8,7 @@ Semantically search measures by title and description. Returns a list of mesures
 
 ## Endpoint
 
-**URL** : `/measures/search?<query_params>`
+**URL** : `/api/measures/search?<query_params>`
 
 **Method** : `GET`
 

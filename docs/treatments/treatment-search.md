@@ -8,7 +8,7 @@ Lesigraphically search treatments. Returns a list of names and IDs
 
 ## Endpoint
 
-**URL** : `/treatments/search?<query_params>`
+**URL** : `/api/treatments/search?<query_params>`
 
 **Method** : `GET`
 
@@ -24,10 +24,15 @@ Lesigraphically search treatments. Returns a list of names and IDs
 
 ## Examples
 
-```jsx title="GET https://api.mediboard.fyi/treatments/search?q=ambien"
-treatments: [
+```jsx title="GET https://api.mediboard.fyi/api/treatments/search?q=ambien"
+"results": [
   {
-    id: 
+    "description": null,
+    "from_study": null,
+    "id": 277,
+    "name": "zolpidem",
+    "no_studies": null,
+    "treatment_group": null
   }
 ]
 ```

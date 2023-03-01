@@ -8,7 +8,7 @@ Gather all data from a study
 
 ## Endpoint
 
-**URL** : `/studies/<study_id>`
+**URL** : `/api/studies/<study_id>`
 
 **Method** : `GET`
 

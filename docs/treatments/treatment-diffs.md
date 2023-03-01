@@ -8,7 +8,7 @@ Get datapoints directly comparing two treatments i.e ambien vs lunesta, ambien v
 
 ## Endpoint
 
-**URL** : `/treatments/diffs?<query_params>`
+**URL** : `/api/treatments/diffs?<query_params>`
 
 **Method** : `GET`
 
